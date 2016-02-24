@@ -10,4 +10,5 @@ class CfgExileCustomCode
 	ExileServer_system_process_postInit 													= "exile_server_custom\override\ExileServer_system_process_postInit.sqf";
 	ExileServer_system_territory_database_load 										= "exile_server_custom\override\ExileServer_system_territory_database_load.sqf";
 
+	ExileClient_object_trader_create															= "override\ExileClient_object_trader_create.sqf";
 };
