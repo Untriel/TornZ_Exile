@@ -16,6 +16,11 @@ This contains the actually custom sqf/fsm code for the zombies themselves.
 2) Update your custom traders in exile_server_custom/traders/world  
 3) PBO the exile_server_custom & add to to your server using -servermod=  
 4) Merge the mpmission with your own mpmission file.  
+5) You need to make loot tables for  
+"zombies"  
+"zombies_doctor"  
+"zombies_police"  
+"zombies_soldier"  
 
 
 #### BattlEye Filters  
