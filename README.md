@@ -12,12 +12,17 @@ This contains the actually custom sqf/fsm code for the zombies themselves.
 
 #### Install Instructions  
 
-1) Install TornZ & TornZ_Exile addons on your server<br />
-Download the addons (via A3Launcher) and upload them to your server. It should now look like this:<br />
-server/@TornZ<br />
-server/@TornZ_Exile<br />
+1) Install TornZ & TornZ_Exile addons on your server
 
-2) Add the parameters to your server start script/batch:<br />
+Download the addons (via A3Launcher) and upload them to your server. It should now look like this:
+
+server/@TornZ
+
+server/@TornZ_Exile
+
+
+2) Add the parameters to your server start script/batch:
+
 -mod=@TornZ;@TornZ_Exile -servermod=@exile_server_custom
 
 3) Download the loottable compiler from exilemod.com and open LootTables.h, at the bottom add (you can change these settings, just keep the classes):
@@ -42,7 +47,8 @@ server/@TornZ_Exile<br />
 20, MedicalItems
 ```
 
-Save and open compile.bat.<br />
+Save and open compile.bat.
+
 
 4) Download "exile_server_config.pbo" from server/@exileserver/addons and unpack it. In config.cpp:<br />
 Find:
@@ -65,17 +71,24 @@ class CfgLootTables
 };
 ```
 
-Replace with:<br />
-The content from CfgLootTables.hpp (lootcompiler).<br />
+Replace with:
 
-Save, repack the pbo and upload it.<br />
+The content from CfgLootTables.hpp (lootcompiler).
 
-5) If you don't have any custom traders on your server, you can turn the folder "exile_server_custom" into pbo. Create the following folders on your server:<br />
-server/@exile_server_custom/addons/<br />
 
-Place the pbo in the addons folder.<br />
+Save, repack the pbo and upload it.
 
-6) Unpack Exile.Altis.pbo and open config.cpp<br />
+
+5) If you don't have any custom traders on your server, you can turn the folder "exile_server_custom" into pbo. Create the following folders on your server:
+
+server/@exile_server_custom/addons/
+
+
+Place the pbo in the addons folder.
+
+
+6) Unpack Exile.Altis.pbo and open config.cpp
+
 Find:
 ```
 class CfgExileCustomCode 
@@ -131,7 +144,8 @@ class CfgExileCustomCode 
 };
 ```
 
-7) Open description.ext<br />
+7) Open description.ext
+
 Find:
 ```
 class CfgRemoteExec
@@ -169,23 +183,36 @@ class CfgRemoteExec
     };
 };
 ```
-8) Open initPlayerLocal.sqf<br />
+8) Replace initPlayerLocal.sqf with the one provided.
+
+9) Copy over the "override" folder into your mpmission folder.
+
+Repack Exile.Altis.pbo, upload and you should be set.
+
+Optional: To require players to have the mods:
+
+Open mission.sqm and:
+
 Find:
 ```
-if (!hasInterface || isServer) exitWith {};
+addOns[]=
+{
+	"exile_client",
+	"a3_map_altis"
+};
 ```
 Replace with:
 ```
-if (!hasInterface || isServer) exitWith {};
-
-// Custom Traders
-waitUntil {!isNil 'ExileServerCustom_Traders'};
+addOns[]=
 {
-    _x call ExileClient_object_trader_create;
-} forEach (call ExileServerCustom_Traders);
+	"exile_client",
+	"a3_map_altis",
+
+	// TornZ
+	"TornZ",
+	"TornZ_Exile"
+};
 ```
-Remove all the code that comes after it. (the traders)<br />
-Repack Exile.Altis.pbo, upload and you should be set.
 
 #### BattlEye Filters  
 There are none, you will need to create your own for your server.  
