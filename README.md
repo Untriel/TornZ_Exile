@@ -42,35 +42,42 @@ server/@TornZ_Exile<br />
 20, MedicalItems
 ```
 
-Save and open compile.bat.
+Save and open compile.bat.<br />
 
-4) Download "exile_server_config.pbo" from server/@exileserver/addons and unpack it. In config.cpp:
+4) Download "exile_server_config.pbo" from server/@exileserver/addons and unpack it. In config.cpp:<br />
 Find:
+```
 serverFSM = "exile_server\fsm\main.fsm";
+```
 
 Replace with:
+```
 serverFSM = "exile_server_custom\fsm\main.fsm";
+```
 
 Find:
+```
 class CfgLootTables
 {
 
 ...........
 
 };
+```
 
-Replace with:
-The content from CfgLootTables.hpp (lootcompiler).
+Replace with:<br />
+The content from CfgLootTables.hpp (lootcompiler).<br />
 
-Save, repack the pbo and upload it.
+Save, repack the pbo and upload it.<br />
 
-5) If you don't have any custom traders on your server, you can turn the folder "exile_server_custom" into pbo. Create the following folders on your server:
-server/@exile_server_custom/addons/
+5) If you don't have any custom traders on your server, you can turn the folder "exile_server_custom" into pbo. Create the following folders on your server:<br />
+server/@exile_server_custom/addons/<br />
 
-Place the pbo in the addons folder.
+Place the pbo in the addons folder.<br />
 
-6) Unpack Exile.Altis.pbo and open config.cpp
+6) Unpack Exile.Altis.pbo and open config.cpp<br />
 Find:
+```
 class CfgExileCustomCode 
 {
     /*
@@ -89,8 +96,9 @@ class CfgExileCustomCode 
     */
 
 };
-
+```
 Replace with:
+```
 class CfgExileCustomCode 
 {
     /*
@@ -121,9 +129,11 @@ class CfgExileCustomCode 
     ExileClient_object_trader_create = "override\ExileClient_object_trader_create.sqf";
 
 };
+```
 
-7) Open description.ext
+7) Open description.ext<br />
 Find:
+```
 class CfgRemoteExec
 {
     class Functions
@@ -138,8 +148,9 @@ class CfgRemoteExec
         jip=0;
     };
 };
-
+```
 Replace with:
+```
 class CfgRemoteExec
 {
     class Functions
@@ -157,12 +168,14 @@ class CfgRemoteExec
         jip=0;
     };
 };
-
-8) Open initPlayerLocal.sqf
+```
+8) Open initPlayerLocal.sqf<br />
 Find:
+```
 if (!hasInterface || isServer) exitWith {};
-
+```
 Replace with:
+```
 if (!hasInterface || isServer) exitWith {};
 
 // Custom Traders
@@ -170,7 +183,7 @@ waitUntil {!isNil 'ExileServerCustom_Traders'};
 {
     _x call ExileClient_object_trader_create;
 } forEach (call ExileServerCustom_Traders);
-
+```
 Repack Exile.Altis.pbo, upload and you should be set.
 
 #### BattlEye Filters  
