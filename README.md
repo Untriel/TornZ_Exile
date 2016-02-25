@@ -12,12 +12,12 @@ This contains the actually custom sqf/fsm code for the zombies themselves.
 
 #### Install Instructions  
 
-1) Install TornZ & TornZ_Exile addons on your server
-Download the addons (via A3Launcher) and upload them to your server. It should now look like this:
-server/@TornZ
-server/@TornZ_Exile
+1) Install TornZ & TornZ_Exile addons on your server<br />
+Download the addons (via A3Launcher) and upload them to your server. It should now look like this:<br />
+server/@TornZ<br />
+server/@TornZ_Exile<br />
 
-2) Add the parameters to your server start script/batch:
+2) Add the parameters to your server start script/batch:<br />
 -mod=@TornZ;@TornZ_Exile -servermod=@exile_server_custom
 
 3) Download the loottable compiler from exilemod.com and open LootTables.h, at the bottom add (you can change these settings, just keep the classes):
