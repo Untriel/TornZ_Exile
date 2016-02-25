@@ -21,7 +21,7 @@ server/@TornZ_Exile
 -mod=@TornZ;@TornZ_Exile -servermod=@exile_server_custom
 
 3) Download the loottable compiler from exilemod.com and open LootTables.h, at the bottom add (you can change these settings, just keep the classes):
-`
+```
 ///////////////////////////////////////////////////////////////////////////////
 // TornZ + Tornz_Exile
 ///////////////////////////////////////////////////////////////////////////////
@@ -40,7 +40,7 @@ server/@TornZ_Exile
 >zombies_soldier
 80, Trash
 20, MedicalItems
-`
+```
 
 Save and open compile.bat.
 
