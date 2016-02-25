@@ -184,6 +184,7 @@ waitUntil {!isNil 'ExileServerCustom_Traders'};
     _x call ExileClient_object_trader_create;
 } forEach (call ExileServerCustom_Traders);
 ```
+Remove all the code that comes after it. (the traders)<br />
 Repack Exile.Altis.pbo, upload and you should be set.
 
 #### BattlEye Filters  
