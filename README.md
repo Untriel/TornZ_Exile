@@ -13,7 +13,6 @@ This contains the actually custom sqf/fsm code for the zombies themselves.
 #### Install Instructions  
 
 1) Install TornZ & TornZ_Exile addons on your server  
-Only available via A3Launcher http://a3launcher.com/  
 2) Update your server fsm option in server_config_options  
 3) Update your custom traders in exile_server_custom/traders/world  
 4) PBO the exile_server_custom & add to to your server using -servermod=  
