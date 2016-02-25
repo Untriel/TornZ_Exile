@@ -12,11 +12,13 @@ This contains the actually custom sqf/fsm code for the zombies themselves.
 
 #### Install Instructions  
 
-1) Update your server fsm option in server_config_options  
-2) Update your custom traders in exile_server_custom/traders/world  
-3) PBO the exile_server_custom & add to to your server using -servermod=  
-4) Merge the mpmission with your own mpmission file.  
-5) You need to make loot tables for  
+1) Install TornZ & TornZ_Exile addons on your server  
+Only available via A3Launcher (http://a3launcher.com/)  
+2) Update your server fsm option in server_config_options  
+3) Update your custom traders in exile_server_custom/traders/world  
+4) PBO the exile_server_custom & add to to your server using -servermod=  
+5) Merge the mpmission with your own mpmission file.  
+6) You need to make loot tables for  
 "zombies"  
 "zombies_doctor"  
 "zombies_police"  
